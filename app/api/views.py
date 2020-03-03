@@ -3,7 +3,7 @@ from flask import request, redirect
 from werkzeug.security import generate_password_hash
 
 from . import api
-from app import cache, db
+from app import cache
 from app.models import User
 
 import requests
