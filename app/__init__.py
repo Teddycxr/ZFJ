@@ -1,6 +1,7 @@
 from flask import Flask
 from datetime import timedelta
 # from flask_cache import Cache
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__,
             # static_url_path='/666', 可以重写路径名
@@ -28,6 +29,7 @@ app.config['CACHE_REDIS_PASSWORD'] = ''
 
 
 # cache = Cache(app,with_jinja2_ext=False)
+db = SQLAlchemy(app)
 
 from app.api import api as api_blueprint
 
