@@ -1,8 +1,6 @@
 from flask import Flask
 from datetime import timedelta
-from flask_mail import Mail
 from flask_cache import Cache
-from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__,
             # static_url_path='/666', 可以重写路径名
@@ -28,9 +26,8 @@ app.config['CACHE_REDIS_PORT']= 6379
 app.config['CACHE_REDIS_DB']= 0
 app.config['CACHE_REDIS_PASSWORD'] = ''
 
-mail = Mail(app)
+
 cache = Cache(app,with_jinja2_ext=False)
-db = SQLAlchemy(app)
 
 from app.api import api as api_blueprint
 
