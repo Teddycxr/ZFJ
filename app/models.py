@@ -20,6 +20,7 @@ class Project(db.Model):
     point_token_num = db.Column(db.String(20))
     reward_token_symbol = db.Column(db.String(100))
     reward_token_num = db.Column(db.String(20))
+    exchange_time = db.Column(db.String(100))
     budget = db.Column(db.String(20))
     rate = db.Column(db.String(30))
     start_date = db.Column(db.String(30))
@@ -44,6 +45,7 @@ class Project(db.Model):
             "point_token_num": self.point_token_num,
             "reward_token_symbol": self.reward_token_symbol,
             "reward_token_num": self.reward_token_num,
+            "exchange_time":self.exchange_time,
             "budget": self.budget,
             "rate": self.rate,
             "start_date": self.start_date,

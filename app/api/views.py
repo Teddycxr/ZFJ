@@ -41,6 +41,7 @@ def save_project():
     point_token_num = temp.get('point_token_num')
     reward_token_symbol = temp.get('reward_token_symbol')
     reward_token_num = temp.get('reward_token_num')
+    exchange_time = temp.get('exchange_time')
     budget = temp.get('budget')
     rate = temp.get('rate')
     start_date = temp.get('start_date')
@@ -49,8 +50,8 @@ def save_project():
 
     # 校验参数
     if not all([id, name, info, sender_name, sender_url, admin_address, admin_pubkey, verifier_address, verifier_pubkey,
-                point_token_symbol, point_token_num, reward_token_symbol, reward_token_num, budget, rate, start_date,
-                end_date, contract]):
+                point_token_symbol, point_token_num, reward_token_symbol, reward_token_num, exchange_time, budget, rate,
+                start_date,end_date, contract]):
         return jsonify(msg="参数不完整")
 
     # 判断project_id是否存在
@@ -75,6 +76,7 @@ def save_project():
         point_token_num=point_token_num,
         reward_token_symbol=reward_token_symbol,
         reward_token_num=reward_token_num,
+        exchange_time = exchange_time,
         budget=budget,
         rate=rate,
         start_date=start_date,
