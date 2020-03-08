@@ -62,7 +62,7 @@ class Project(db.Model):
 class Task(db.Model):
     __tablename__ = 'task'
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.String(255), primary_key=True)
     project_id = db.Column(db.String(10))
     project_name = db.Column(db.String(255))
     contributer_wallet = db.Column(db.String(255))
@@ -104,3 +104,24 @@ class Task(db.Model):
 
     def __repr__(self):
         return 'Task:%s' % self.name
+
+
+class Token_addr(db.Model):
+    __tablename__ = 'token_addr'
+
+    rep = db.Column(db.String(100))
+    addr = db.Column(db.String(255))
+
+    addtime = db.Column(db.DateTime, default=datetime.now)  # 添加时间
+
+    def to_full_dict(self):
+        """将详细信息转换为字典数据"""
+        token_addr_dict = {
+            "rep": self.rep,
+            "addr": self.addr,
+        }
+
+        return token_addr_dict
+
+    def __repr__(self):
+        return 'Token_addr:%s' % self.name
