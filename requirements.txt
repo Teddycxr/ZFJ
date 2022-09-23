@@ -45,7 +45,7 @@ netaddr==0.7.19
 netifaces==0.10.4
 parsimonious==0.8.1
 prettytable==0.7.2
-protobuf==3.11.3
+protobuf==3.18.3
 pycrypto==2.6.1
 pycryptodome==3.9.7
 pygobject==3.26.1
